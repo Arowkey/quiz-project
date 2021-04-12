@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Quiz</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+
+<body>
+    <nav></nav>
+    <div class="middle">
+        <div class="quiz-title">
+            <input type="text" id="title-input" placeholder="Name des Quizzes">
+        </div>
+        <div class="content">
+            <label>Hi</label>
+            <div class="grow-wrap">
+                <textarea name="question" id="question" rows="1" oninput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="buttons"></div>
+</body>
+
+</html>

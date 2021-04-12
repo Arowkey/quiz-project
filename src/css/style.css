@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --imperial-red: #e63946ff;
+    --honeydew: #f1faeeff;
+    --powder-blue: #a8dadcff;
+    --celadon-blue: #457b9dff;
+    --prussian-blue: #1d3557ff;
+}
+
+body {
+    background-color: var(--prussian-blue);
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 400;
+}
+
+.content {
+    height: 700px;
+    width: 1000px;
+    background: var(--honeydew);
+    border-radius: 100px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 50px 20px 50px;
+}
+
+.start-button {
+    width: 300px;
+    height: 300px;
+    background-color: var(--imperial-red);
+    font-size: 3rem;
+    color: var(--honeydew);
+    border: 0;
+    border-radius: 50px 0px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.start-button:hover {
+    filter: brightness(80%);
+    cursor: pointer;
+}
+
+#title-header {
+    font-size: 4rem;
+}
+
+#start-button-container {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav, .buttons {
+    height: 700px;
+    width: 300px;
+    background-color: var(--honeydew);
+    border-radius: 100px 0px;
+}
+
+.quiz-title {
+    height: 60px;
+    background-color: var(--honeydew);
+    margin: 0px 50px 0px 50px;
+    border-radius: 100px 0px;
+    padding: 30px 100px 30px 100px;
+}
+
+#title-input {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: var(--honeydew);
+    font-size: 2.5rem;
+    text-align: center;
+    border: none;
+}
+
+#title-input:focus {
+    outline: none;
+    border-radius: 60px 0px;
+    background-color: var(--powder-blue);
+}
+
+.grow-wrap {
+    display: grid;
+}
+
+.grow-wrap::after {
+    content: attr(data-replicated-value) " ";
+    white-space: pre-wrap;
+    visibility: hidden;
+}
+
+.grow-wrap>textarea {
+    resize: none;
+    overflow: hidden;
+}
+
+.grow-wrap>textarea, .grow-wrap::after {
+    border: 1px solid black;
+    padding: 0.5rem;
+    font: inherit;
+    grid-area: 1 / 1 / 2 / 2;
+}
