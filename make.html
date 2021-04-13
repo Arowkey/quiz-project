@@ -10,21 +10,56 @@
 </head>
 
 <body>
-    <nav></nav>
+    <nav>
+        <span>Fragen</span>
+        <div>
+            <button>Frage #1</button>
+        </div>
+    </nav>
     <div class="middle">
         <div class="quiz-title">
             <input type="text" id="title-input" placeholder="Name des Quizzes">
         </div>
         <div class="content">
-            <label>Hi</label>
+            <label>Frage</label>
             <div class="grow-wrap">
-                <textarea name="question" id="question" rows="1" oninput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
+                <textarea name="question" id="question" rows="1"
+                    oninput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
             </div>
+
+            <div class="answer">
+                <input type="text" id="a1" class="atext" placeholder="Antwort #1">
+                <input type="checkbox" id="c1" class="acheck">
+            </div>
+            <div class="answer">
+                <input type="text" id="a2" class="atext" placeholder="Antwort #2">
+                <input type="checkbox" id="c2" class="acheck">
+            </div>
+            <div class="answer">
+                <input type="text" id="a3" class="atext" placeholder="Antwort #3">
+                <input type="checkbox" id="c3" class="acheck">
+            </div>
+            <div class="answer">
+                <input type="text" id="a4" class="atext" placeholder="Antwort #4">
+                <input type="checkbox" id="c4" class="acheck">
+            </div>
+
+
+
+
 
         </div>
     </div>
 
-    <div class="buttons"></div>
+    <div class="buttons">
+        <button id="new">Neue Frage</button>
+        <button id="save">Quiz speichern</button>
+        <button id="load">Quiz laden</button>
+    </div>
+
+    
 </body>
 
+<script src="src/js/xmlhander.js"></script>
+<script src="src/js/make.js"></script>
 </html>
