@@ -35,35 +35,34 @@ function saveXML(evt) {
     const nameAttr = xmlDoc.createAttribute('name');
     nameAttr.nodeValue = titleInput.value;
     quiz.setAttributeNode(nameAttr);
-    console.log(quiz);
 
-    quiz = buildXML(quiz, questions, xmlDoc);
-    console.log(quiz);
+    buildXML(quiz, questions, xmlDoc);
 }
 
 function buildXML(root, obj, xmlDoc) {
     if (obj instanceof Array) {
         obj.forEach(entry => {
-            root = (buildXML(root, entry, xmlDoc));
+            buildXML(root, entry, xmlDoc);
         })
     } else if (obj instanceof Object) {
         let names = Object.getOwnPropertyNames(obj);
         names.forEach(name => {
             let prop = obj[name];
             let elemNode = xmlDoc.createElement(name);
-            console.log(typeof prop);
             if (prop instanceof Array || prop instanceof Object) {
-                elemNode = (buildXML(elemNode, prop, xmlDoc));
+                buildXML(elemNode, prop, xmlDoc);
                 root.appendChild(elemNode);
+
             } else if(typeof prop === "boolean") {
                 let attrNode = xmlDoc.createAttribute(name);
                 attrNode.nodeValue = prop;
                 root.setAttributeNode(attrNode);
+
             } else if(name === "text") {
                 let textNode = xmlDoc.createTextNode(prop);
                 root.appendChild(textNode);
-            }
-            else {
+
+            } else {
                 let textNode = xmlDoc.createTextNode(prop);
                 elemNode.appendChild(textNode);
                 root.appendChild(elemNode);
